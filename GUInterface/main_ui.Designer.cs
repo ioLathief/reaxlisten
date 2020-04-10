@@ -49,6 +49,7 @@ namespace reaxlisten
             // 
             // speech_txt_box
             // 
+            this.speech_txt_box.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.speech_txt_box.Location = new System.Drawing.Point(43, 29);
             this.speech_txt_box.Name = "speech_txt_box";
             this.speech_txt_box.Size = new System.Drawing.Size(531, 205);
@@ -68,10 +69,11 @@ namespace reaxlisten
             // 
             this.play_pause_btn.Location = new System.Drawing.Point(142, 255);
             this.play_pause_btn.Name = "play_pause_btn";
-            this.play_pause_btn.Size = new System.Drawing.Size(73, 25);
+            this.play_pause_btn.Size = new System.Drawing.Size(92, 25);
             this.play_pause_btn.TabIndex = 3;
             this.play_pause_btn.Text = "Play/Pause";
             this.play_pause_btn.UseVisualStyleBackColor = true;
+            this.play_pause_btn.Click += new System.EventHandler(this.play_pause_btn_Click);
             // 
             // pref_btn
             // 
