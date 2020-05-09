@@ -42,10 +42,16 @@ namespace reaxlisten
             this.voices_combo = new System.Windows.Forms.ComboBox();
             this.volume_trackbar = new System.Windows.Forms.TrackBar();
             this.rate_trackbar = new System.Windows.Forms.TrackBar();
-            this.play_hk_txtb = new System.Windows.Forms.TextBox();
-            this.pause_hk_txtb = new System.Windows.Forms.TextBox();
-            this.stop_hk_txtb = new System.Windows.Forms.TextBox();
             this.save_btn = new System.Windows.Forms.Button();
+            this.hk_pause_2_combo = new System.Windows.Forms.ComboBox();
+            this.hk_stop_3_combo = new System.Windows.Forms.ComboBox();
+            this.hk_playres_1_combo = new System.Windows.Forms.ComboBox();
+            this.hk_playres_2_combo = new System.Windows.Forms.ComboBox();
+            this.hk_playres_3_combo = new System.Windows.Forms.ComboBox();
+            this.hk_pause_1_combo = new System.Windows.Forms.ComboBox();
+            this.hk_pause_3_combo = new System.Windows.Forms.ComboBox();
+            this.hk_stop_2_combo = new System.Windows.Forms.ComboBox();
+            this.hk_stop_1_combo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize) (this.volume_trackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.rate_trackbar)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +68,7 @@ namespace reaxlisten
             // title_lbl2
             // 
             this.title_lbl2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.title_lbl2.Location = new System.Drawing.Point(36, 229);
+            this.title_lbl2.Location = new System.Drawing.Point(36, 228);
             this.title_lbl2.Name = "title_lbl2";
             this.title_lbl2.Size = new System.Drawing.Size(132, 23);
             this.title_lbl2.TabIndex = 1;
@@ -78,7 +84,7 @@ namespace reaxlisten
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(36, 116);
+            this.label2.Location = new System.Drawing.Point(36, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 23);
             this.label2.TabIndex = 3;
@@ -127,6 +133,7 @@ namespace reaxlisten
             // volume_trackbar
             // 
             this.volume_trackbar.Location = new System.Drawing.Point(197, 105);
+            this.volume_trackbar.Maximum = 100;
             this.volume_trackbar.Name = "volume_trackbar";
             this.volume_trackbar.Size = new System.Drawing.Size(201, 45);
             this.volume_trackbar.TabIndex = 9;
@@ -134,50 +141,109 @@ namespace reaxlisten
             // rate_trackbar
             // 
             this.rate_trackbar.Location = new System.Drawing.Point(197, 156);
+            this.rate_trackbar.Maximum = 100;
             this.rate_trackbar.Name = "rate_trackbar";
             this.rate_trackbar.Size = new System.Drawing.Size(201, 45);
             this.rate_trackbar.TabIndex = 10;
             // 
-            // play_hk_txtb
-            // 
-            this.play_hk_txtb.Location = new System.Drawing.Point(197, 269);
-            this.play_hk_txtb.Name = "play_hk_txtb";
-            this.play_hk_txtb.Size = new System.Drawing.Size(201, 23);
-            this.play_hk_txtb.TabIndex = 11;
-            // 
-            // pause_hk_txtb
-            // 
-            this.pause_hk_txtb.Location = new System.Drawing.Point(197, 311);
-            this.pause_hk_txtb.Name = "pause_hk_txtb";
-            this.pause_hk_txtb.Size = new System.Drawing.Size(201, 23);
-            this.pause_hk_txtb.TabIndex = 12;
-            // 
-            // stop_hk_txtb
-            // 
-            this.stop_hk_txtb.Location = new System.Drawing.Point(197, 349);
-            this.stop_hk_txtb.Name = "stop_hk_txtb";
-            this.stop_hk_txtb.Size = new System.Drawing.Size(201, 23);
-            this.stop_hk_txtb.TabIndex = 13;
-            // 
             // save_btn
             // 
-            this.save_btn.Location = new System.Drawing.Point(323, 431);
+            this.save_btn.Location = new System.Drawing.Point(323, 432);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(75, 23);
             this.save_btn.TabIndex = 14;
             this.save_btn.Text = "Save";
             this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // hk_pause_2_combo
+            // 
+            this.hk_pause_2_combo.FormattingEnabled = true;
+            this.hk_pause_2_combo.Location = new System.Drawing.Point(258, 312);
+            this.hk_pause_2_combo.Name = "hk_pause_2_combo";
+            this.hk_pause_2_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_pause_2_combo.TabIndex = 15;
+            // 
+            // hk_stop_3_combo
+            // 
+            this.hk_stop_3_combo.FormattingEnabled = true;
+            this.hk_stop_3_combo.Location = new System.Drawing.Point(400, 348);
+            this.hk_stop_3_combo.Name = "hk_stop_3_combo";
+            this.hk_stop_3_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_stop_3_combo.TabIndex = 16;
+            // 
+            // hk_playres_1_combo
+            // 
+            this.hk_playres_1_combo.FormattingEnabled = true;
+            this.hk_playres_1_combo.Location = new System.Drawing.Point(119, 269);
+            this.hk_playres_1_combo.Name = "hk_playres_1_combo";
+            this.hk_playres_1_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_playres_1_combo.TabIndex = 17;
+            // 
+            // hk_playres_2_combo
+            // 
+            this.hk_playres_2_combo.FormattingEnabled = true;
+            this.hk_playres_2_combo.Location = new System.Drawing.Point(258, 269);
+            this.hk_playres_2_combo.Name = "hk_playres_2_combo";
+            this.hk_playres_2_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_playres_2_combo.TabIndex = 18;
+            // 
+            // hk_playres_3_combo
+            // 
+            this.hk_playres_3_combo.FormattingEnabled = true;
+            this.hk_playres_3_combo.Location = new System.Drawing.Point(400, 269);
+            this.hk_playres_3_combo.Name = "hk_playres_3_combo";
+            this.hk_playres_3_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_playres_3_combo.TabIndex = 19;
+            // 
+            // hk_pause_1_combo
+            // 
+            this.hk_pause_1_combo.FormattingEnabled = true;
+            this.hk_pause_1_combo.Location = new System.Drawing.Point(119, 312);
+            this.hk_pause_1_combo.Name = "hk_pause_1_combo";
+            this.hk_pause_1_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_pause_1_combo.TabIndex = 20;
+            // 
+            // hk_pause_3_combo
+            // 
+            this.hk_pause_3_combo.FormattingEnabled = true;
+            this.hk_pause_3_combo.Location = new System.Drawing.Point(400, 312);
+            this.hk_pause_3_combo.Name = "hk_pause_3_combo";
+            this.hk_pause_3_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_pause_3_combo.TabIndex = 21;
+            // 
+            // hk_stop_2_combo
+            // 
+            this.hk_stop_2_combo.FormattingEnabled = true;
+            this.hk_stop_2_combo.Location = new System.Drawing.Point(258, 348);
+            this.hk_stop_2_combo.Name = "hk_stop_2_combo";
+            this.hk_stop_2_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_stop_2_combo.TabIndex = 22;
+            // 
+            // hk_stop_1_combo
+            // 
+            this.hk_stop_1_combo.FormattingEnabled = true;
+            this.hk_stop_1_combo.Location = new System.Drawing.Point(119, 348);
+            this.hk_stop_1_combo.Name = "hk_stop_1_combo";
+            this.hk_stop_1_combo.Size = new System.Drawing.Size(121, 23);
+            this.hk_stop_1_combo.TabIndex = 23;
             // 
             // configure_ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(455, 489);
+            this.ClientSize = new System.Drawing.Size(545, 489);
+            this.Controls.Add(this.hk_stop_1_combo);
+            this.Controls.Add(this.hk_stop_2_combo);
+            this.Controls.Add(this.hk_pause_3_combo);
+            this.Controls.Add(this.hk_pause_1_combo);
+            this.Controls.Add(this.hk_playres_3_combo);
+            this.Controls.Add(this.hk_playres_2_combo);
+            this.Controls.Add(this.hk_playres_1_combo);
+            this.Controls.Add(this.hk_stop_3_combo);
+            this.Controls.Add(this.hk_pause_2_combo);
             this.Controls.Add(this.save_btn);
-            this.Controls.Add(this.stop_hk_txtb);
-            this.Controls.Add(this.pause_hk_txtb);
-            this.Controls.Add(this.play_hk_txtb);
             this.Controls.Add(this.rate_trackbar);
             this.Controls.Add(this.volume_trackbar);
             this.Controls.Add(this.voices_combo);
@@ -209,10 +275,16 @@ namespace reaxlisten
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox voices_combo;
         private System.Windows.Forms.Button save_btn;
-        private System.Windows.Forms.TextBox stop_hk_txtb;
-        private System.Windows.Forms.TextBox pause_hk_txtb;
-        private System.Windows.Forms.TextBox play_hk_txtb;
         private System.Windows.Forms.TrackBar rate_trackbar;
         private System.Windows.Forms.TrackBar volume_trackbar;
+        private System.Windows.Forms.ComboBox hk_stop_1_combo;
+        private System.Windows.Forms.ComboBox hk_stop_2_combo;
+        private System.Windows.Forms.ComboBox hk_pause_3_combo;
+        private System.Windows.Forms.ComboBox hk_pause_1_combo;
+        private System.Windows.Forms.ComboBox hk_playres_3_combo;
+        private System.Windows.Forms.ComboBox hk_playres_2_combo;
+        private System.Windows.Forms.ComboBox hk_playres_1_combo;
+        private System.Windows.Forms.ComboBox hk_stop_3_combo;
+        private System.Windows.Forms.ComboBox hk_pause_2_combo;
     }
 }

@@ -36,6 +36,7 @@ namespace reaxlisten
             this.stop_btn = new System.Windows.Forms.Button();
             this.play_pause_btn = new System.Windows.Forms.Button();
             this.pref_btn = new System.Windows.Forms.Button();
+            this.status_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // paste_btn
@@ -46,6 +47,7 @@ namespace reaxlisten
             this.paste_btn.TabIndex = 0;
             this.paste_btn.Text = "Paste";
             this.paste_btn.UseVisualStyleBackColor = true;
+            this.paste_btn.Click += new System.EventHandler(this.paste_btn_Click);
             // 
             // speech_txt_box
             // 
@@ -64,6 +66,7 @@ namespace reaxlisten
             this.stop_btn.TabIndex = 2;
             this.stop_btn.Text = "Stop";
             this.stop_btn.UseVisualStyleBackColor = true;
+            this.stop_btn.Click += new System.EventHandler(this.stop_btn_Click);
             // 
             // play_pause_btn
             // 
@@ -83,12 +86,22 @@ namespace reaxlisten
             this.pref_btn.TabIndex = 4;
             this.pref_btn.Text = "Configure";
             this.pref_btn.UseVisualStyleBackColor = true;
+            this.pref_btn.Click += new System.EventHandler(this.pref_btn_Click);
+            // 
+            // status_label
+            // 
+            this.status_label.Location = new System.Drawing.Point(43, 357);
+            this.status_label.Name = "status_label";
+            this.status_label.Size = new System.Drawing.Size(100, 23);
+            this.status_label.TabIndex = 5;
+            this.status_label.Text = "Status";
             // 
             // main_ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 389);
+            this.Controls.Add(this.status_label);
             this.Controls.Add(this.pref_btn);
             this.Controls.Add(this.play_pause_btn);
             this.Controls.Add(this.stop_btn);
@@ -106,5 +119,6 @@ namespace reaxlisten
         private System.Windows.Forms.Button stop_btn;
         private System.Windows.Forms.Button play_pause_btn;
         private System.Windows.Forms.Button pref_btn;
+        private System.Windows.Forms.Label status_label;
     }
 }
